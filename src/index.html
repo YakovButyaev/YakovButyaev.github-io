@@ -8,30 +8,40 @@
     <title>Практика разработки</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 
+<div class="loader">
+  <div class="loader_inner"></div>
+</div>
 <header>
+
 <nav>
 <div class="logo">Яков Бутяев</div>
 <div class="menu"><ul>
-    <li>Обо мне</li>
-    <li>Услуги</li>
-    <li>Кейсы</li>
-    <li>Прайс</li>
-    <li>Отзывы</li>
-    <li>Контакты</li>
+    <li><a href="#">Обо мне</a></li>
+    <li><a href="#">Услуги</a></li>
+    <li><a href="#">Кейсы</a></li>
+    <li><a href="#">Прайс</a></li>
+    <li><a href="#">Отзывы</a></li>
+    <li><a href="#">Контакты</a></li>
 </ul></div> 
 </nav>
 </header>
 
-<div class="main"><div class="title__container">
+
+
+<main>
+<section class="main"><div class="title__container">
 <h1>Привет <br>Я Бутяев Яков</h1>
 <h4>Фулл стек веб-разработчик</h4>
-<input type="submit" value="Обо мне">
-<input type="submit" value="Мои работы">	
+<input type="button" value="Обо мне">
+<input type="button" value="Мои работы">	
 </div>
-</div>
+</section>
+</main>
+
 
 <div class="about_me">
 <h2>ОБО МНЕ</h2>
@@ -45,29 +55,35 @@
 <div class="item_skills">
 <h2>ЧТО Я УМЕЮ</h2> 
 <div class="design">
+<div class="skill"><div class="icon"><img src="img/Nout.png" alt=""></div>
 <h4> Веб-дизайн </h4>
-<p>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit. Consectetur adipisicing elit. Voluptatem, animi!</p>
+<p>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit. Consectetur adipisicing elit. Voluptatem, animi!</p> </div>
 </div>
 
 <div class="work">
+<div class="skill"><div class="icon"><img src="img/slash.png" alt=""></div>
 <h4> Разработка </h4>
-<p>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit. Atque excepturi quo <br>maxime nulla dolore delectus maiores laudantium.</p>
+<p>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit. Atque excepturi quo <br>maxime nulla dolore delectus maiores laudantium.</p></div>
 </div>
 
 <div class="optim">
+<div class="skill"><div class="icon"><img src="img/Rocket.png" alt=""></div>
 <h4> CEO-Оптимизация </h4>
-<p>Lorem ipsum dolor sit amet, consectetur. <br>Consectetur adipisicing elit. Voluptatem, animi!</p>
+<p>Lorem ipsum dolor sit amet, consectetur. <br>Consectetur adipisicing elit. Voluptatem, animi!</p> </div>
 </div>
 
 <div class="market">
+<div class="skill"><div class="icon"><img src="img/Gphone.png" alt=""></div>
 <h4> Маркетинг </h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Consectetur adipisicing elit. Voluptatem, animi!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Consectetur adipisicing elit. Voluptatem, animi!</p> </div>
 </div>
 </div>
 
 <div class="case">
 <h2>КЕЙСЫ</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum a, alias porro placeat voluptas quae et, nam quasi nulla itaque.</p>
+
+<video src="" width="320" height="240" preload></video>
 
 <div class="case1">
 <h3> CLIENT </h3>
@@ -90,9 +106,10 @@
 
 <div class="calculator">
     <h2>Расчет стоимости</h2>
+    <form>
     <div class="sel1">
-    <h3>Тип сайта</h3>
-    <select name="List" id="list1">
+    <label for="site">Тип сайта:</label>
+    <select name="site" id="list1">
     <option value="option1">Сайт-визитка</option>
     <option value="option2">Лэндинг страница</option>
     <option value="option3">Онлайн магазин</option>
@@ -101,7 +118,7 @@
 </div>
 
 <div class="sel2">
-   <h3>Дизайн</h3>
+   <label for="site">Дизайн:</label>
     <select name="List" id="list1" >
     <option value="option1">1</option>
     <option value="option2">2</option>
@@ -111,7 +128,7 @@
 </div>
 
 <div class="sel3">
-    <h3>Адаптивность</h3>
+    <label for="site">Адаптивность:</label>
     <select name="List" id="list1" >
     <option value="option1">1</option>
     <option value="option2">2</option>
@@ -119,6 +136,7 @@
     <option value="option4">4</option>
 </select>
 </div>
+</form>
 
 <div class="cost">
     <p>Сроки <br> Стоимость</p>   
@@ -129,27 +147,37 @@
 <div class="stats">
     <h2>НЕМНОГО СТАТИСТИКИ</h2>
     
-    <div class="stat1">
+  <div class="four"> 
+   <div class="stat1">
+<div class="skill2"><div class="icon2"><img src="img/stats_smail.png" alt=""></div>
 <h3> 120 </h3>
-<span>СЧАСТЛИВЫХ КЛИЕНТОВ</span>
-</div>
+<p>СЧАСТЛИВЫХ КЛИЕНТОВ</p>
+ </div>
+  </div>
    
    <div class="stat2">
+   <div class="skill2"><div class="icon2"><img src="img/stats_slash.png" alt=""></div>
 <h3> 4,600 </h3>
-<span>ЧАСОВ РАБОТЫ</span>
-</div>
+<p>ЧАСОВ РАБОТЫ</p>
+  </div>
+   </div>
    
    <div class="stat3">
+   <div class="skill2"><div class="icon2"><img src="img/stats_check.png" alt=""></div>
 <h3> 340 </h3>
-<span>ПРОЕКТОВ ЗАВЕРШЕНО</span>
-</div>
+<p>ПРОЕКТОВ ЗАВЕРШЕНО</p>
+  </div>
+   </div>
    
    <div class="stat4">
+   <div class="skill2"><div class="icon2"><img src="img/stats_champ.png" alt=""></div>
 <h3> 23 </h3>
-<span>НАГРАД ПОЛУЧЕНО</span>
+<p>НАГРАД ПОЛУЧЕНО</p>
 </div>
 </div>
-    
+</div>
+</div>
+
 <div class="feedback">
     <h2>ОТЗЫВЫ</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum officiis, perspiciatis quibusdam quis quos voluptatum blanditiis <br>possimus aut vero. Ab molestiae, qui temporibus ea quos autem quis officiis dolorem,<br><br><b>Михаил</b>,Ген директор ПАО "Газпром". </p>   
@@ -160,15 +188,27 @@
         <h2>МОИ КОНТАКТЫ</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi harum magnam deserunt voluptate voluptas?</p>
         
-       <div class="link1"><a href="">Санкт Петербург<br>Невский проспект 11</a></div>
-        <div class="link2"><a href="">info@companyname.com</a></div>
-        <div class="link3"><a href="">+7 999 999-99-99</a></div>
-        <br><h3>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h3>
+     
+    
+    
+       <div class="link1"><div class="icon3"><img src="img/geo.png" alt=""></div><a href="">
+       Санкт Петербург<br>Невский проспект 11</a></div>
+       
+      
+        <div class="link2"><div class="icon4"><img src="img/letter.png" alt=""></div><a href=""> 
+        info@companyname.com</a></div>
+        
+       
+        <div class="link3"> <div class="icon5"><img src="img/phone.png" alt=""></div><a href="">
+        +7 999 999-99-99</a></div>
+        
+        
         <form action="t">
+           <h3>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h3>
             <input class="name" type="text" name="name input" value="" placeholder="Имя">
             <input class="mail" type="text" name="email input" value="" placeholder="Email">
         <br>
-            <textarea  class="mes" name="message"id="1" cols="50" rows="10"  placeholder="Сообщениие">
+            <textarea  class="mes" name="message" id="1" cols="50" rows="10" value="" placeholder="Сообщениие">
             </textarea>
            <br> <input class="res" type="reset" value="Отправить">
         </form>

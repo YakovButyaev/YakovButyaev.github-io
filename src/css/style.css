@@ -1,10 +1,41 @@
 .body{
     font-family: Arial, sans-serif;
 }
+
+html.js .loader {
+  background: none repeat scroll 0 0 #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+}
+
+html.js .loader .loader_inner {
+  background-image: url("../img/preloader.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #fff;
+  height: 60px;
+  width: 60px;
+  margin-top: -30px;
+  margin-left: -30px;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+
+
+
 nav{
     width: 100%;
     height: 60px;
     background: #2a3e51;
+    position: fixed;
 }
 
 .logo{
@@ -12,8 +43,27 @@ nav{
     font-size: 28px;
     line-height: 60px;
     padding-left: 388px;
+    -webkit-animation: coming 2s ease;
+   -o-animation: coming 2s ease ;
+   animation: coming 2s ease ;
     float: left
+   
 }
+
+@keyframes coming{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
 .menu{
     float: left;
     padding-left: 432px;
@@ -26,11 +76,35 @@ nav{
     margin-right: 40px;
     font-size: 16px;
     text-transform: uppercase;
+    -webkit-animation:topshift 0.5s  ease forwards;
+    -o-animation: topshift 0.5s ease forwards ;
+    animation: topshift 0.5s ease forwards ;
+    opacity: 0;
+}
+
+.menu li:nth-child(2){
+    animation-delay: 0.4s;
+}
+
+.menu li:nth-child(3){
+    animation-delay: 0.8s;
+}
+
+.menu li:nth-child(4){
+    animation-delay: 1.2s;
+}
+
+.menu li:nth-child(5){
+    animation-delay: 1.6s;
+}
+
+.menu li:nth-child(6){
+    animation-delay: 2s;
 }
 
 .main{
     width: 100%;
-    height: calc(100% - 60px);
+    height: 1000px;
     background: url(../img/boy.png) 90% 100%/auto 85% no-repeat, url(../img/Background.png) center/cover no-repeat;
 }
 
@@ -39,6 +113,13 @@ nav{
     margin: 432px 0px 0px 404px;
     color: #223549;
     text-align: center;
+    opacity: 0;
+    -webkit-animation: titltmove 1s ease forwards;
+    -o-animation: titltmove 1s ease forwards;
+    animation: titltmove 1s ease forwards;
+    -webkit-animation-delay: 2.4s;
+    -o-animation-delay: 2.4s;
+    animation-delay: 2.4s;
 }
 
 .title__container h1{
@@ -64,25 +145,88 @@ nav{
     margin: 58px 14px 0px 14px;
 }
 
+.menu li a{
+    transition: all 0.4s;
+    color: white;
+    transform: scale(1);
+    display: inline-block;
+}
+
+.menu li a:visited{
+    color: white;
+}
+
+.menu li a:hover{
+    color: #e78606;
+}
+
+.menu li a:active{
+    transform: scale(1.1);
+}
+
+.title__container input{
+    transition: all 0.2s;
+    transform: scale(1);
+}
+
+.title__container input:hover{
+    background: #2a3e51;
+    color: white;
+}
+
+.title__container input:active{
+    transform: scale(1.1);
+}
+
+@keyframes topshift{
+    from{
+        opacity: 0;
+        margin-top: -80px;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes titltmove{
+    from{
+        opacity: 0;
+        margin-left: -600px;
+    }
+    to{
+        opacity: 1;
+        margin-left: 404px;
+    }
+}
+
+
 .about_me{
     width: 100%;
-    height: 980px;
+    height: 960px;
     background: #fcfdfd;
+    background: url(../img/line.png) no-repeat 50% 160px/100px, url(../img/boy2.png) 50% 260px/300px no-repeat;
 }
 
 .about_me h2{ 
     float: left;
     width: 100%;
-    padding: 109px 0px 490px 930px;
+    padding: 109px 0px 490px 900px;
     font-size: 35px;
     color: #1a2e43;
     font-family: Arial,sans-serif;
     font-weight: bold;
-    background: url(../img/line.png) no-repeat 50% 160px/100px, url(../img/boy2.png) 50% 260px/300px no-repeat;
+    -webkit-animation: pulse 3s ease infinite;
+    -o-animation: pulse 3s ease infinite;
+    animation: pulse 3s ease infinite;
 }
+    
+
+
+
 
 .line_1{
-    padding: 0px 0px 0px 597px;
+    padding: 0px 0px 0px 537px;
     text-align: left;
     font-size: 22px;
     font-family: sans-serif;
@@ -90,7 +234,7 @@ nav{
 }
 
 .line_2{
-    padding: 46px 0px 0px 597px;
+    padding: 46px 0px 0px 537px;
     text-align: left;
     font-size: 22px;
     font-family: sans-serif;
@@ -105,47 +249,82 @@ nav{
     color: #697783;
     font-size: 22px;
     padding: 11px 14px 11px 35px;
-    margin: 40px 0px 0px 920px;
+    margin: 40px 0px 0px 880px;
+}
+
+.about_me input{
+    transition: all 0.2s;
+    transform: scale(1);
+}
+
+.about_me input:hover{
+    background: url(../img/download.png) 7% no-repeat,#2a3e51;
+    color: white;
+}
+
+.about_me input:active{
+    transform: scale(1.1);
 }
 
 .item_skills{
     width: 100%;
     height: 530px;
-    background: url(../img/nout.png) 27% 290px/auto no-repeat, url(../img/slash.png) 42% 285px/auto no-repeat, url(../img/Rocket.png) 57% 285px/auto no-repeat, url(../img/Gphone.png) 73% 285px/auto no-repeat, url(../img/fon_skills.png) 100%/100% no-repeat; 
+    background: url(../img/line.png) 50% 170px/100px no-repeat, url(../img/fon_skills.png) 100%/100% no-repeat; 
 }
+
+
+.skill{
+    display: inline-block;
+    border: 1px solid #fff opacity(0); 
+    transition: ease 1s;
+    
+   
+   }
+   .skill:hover {
+    transform: scale(1.4);
+    -webkit-animation: headShake 2s ease ;
+    -o-animation: headShake 2s ease ;
+    animation: headShake 2s ease ;
+   }
 
 .item_skills h2{
     float: left;
     width: 100%;
-    padding: 100px 0px 490px 915px;
+    
+    padding: 100px 0px 100px 870px;
     font-size: 35px;
     color: #1a2e43;
     font-family: Arial,sans-serif;
     font-weight: bold;
-    background: url(../img/line.png) no-repeat 50.5% 170px/100px;
+    -webkit-animation: pulse 3s ease infinite;
+    -o-animation: pulse 3s ease infinite;
+    animation: pulse 3s ease infinite;
 }
 
 .design{
     width: 250px;
     float: left;
     text-align: center;
-    margin: -260px 0px 0px 435px; 
+    margin: 0px 0px 0px 21%; 
     font-size: 19px;
+    display:inline-block;
 }
 
 .work{
     width: 250px;
     float: left;
     text-align: center;
-    margin: -260px 0px 0px 730px; 
+    margin: 0px 0px 0px 50px; 
     font-size: 19px;
 }
+
+
 
 .optim{
     width: 250px;
     float: left;
     text-align: center;
-    margin: -260px 0px 0px 1020px; 
+    margin: 0px 0px 0px 50px; 
     font-size: 19px;
 }
 
@@ -153,12 +332,12 @@ nav{
     width: 250px;
     float: left;
     text-align: center;
-    margin: -260px 0px 0px 1340px; 
+    margin: 0px 0px 0px 50px; 
     font-size: 19px;
 }
 
 .design h4{
-    padding: 0px 0px 15px 0px;
+    padding: 25px 0px 20px 0px;
     color: #cf7600;
     font-size: 25px;
     font-family: sans-serif;
@@ -166,7 +345,7 @@ nav{
 }
 
 .work h4{
-    padding: 0px 0px 15px 0px;
+    padding: 25px 0px 20px 0px;
     color: #cf7600;
     font-size: 25px;
     font-family: sans-serif;
@@ -174,7 +353,7 @@ nav{
 }
 
 .optim h4{
-    padding: 0px 0px 15px 0px;
+    padding: 25px 0px 20px 0px;
     color: #cf7600;
     font-size: 25px;
     font-family: sans-serif;
@@ -182,7 +361,7 @@ nav{
 }
 
 .market h4{
-    padding: 0px 0px 15px 0px;
+    padding: 25px 0px 20px 0px;
     color: #cf7600;
     font-size: 25px;
     font-family: sans-serif;
@@ -213,21 +392,24 @@ nav{
     font-family: sans-serif;
 }
 
+
 .case{
     width: 100%;
     height: 1200px;
-    background: url(../img/example_site.png) 10% 350px/auto no-repeat, #fff;
+    background: url(../img/line.png) no-repeat 50.5% 160px/100px;
 }
 
 .case h2{    
     float: left;
     width: 100%;
-    padding: 30px 0px 110px 960px;
+    padding: 90px 0px 110px 925px;
     font-size: 35px;
     color: #1a2e43;
     font-family: Arial,sans-serif;
     font-weight: bold;
-    background: url(../img/line.png) no-repeat 50.5% 100px/100px;
+    -webkit-animation: pulse 3s ease infinite;
+    -o-animation: pulse 3s ease infinite;
+    animation: pulse 3s ease infinite;
 }
 
 .case p{
@@ -301,6 +483,20 @@ nav{
     padding: 9px 30px 9px 30px;
 }
 
+.case3 input{
+    transition: all 0.2s;
+    transform: scale(1);
+}
+
+.case3 input:hover{
+    background: #35625e;
+    color: white;
+}
+
+.case3 input:active{
+    transform: scale(1.1);
+}
+
 .calculator{
     
     height: 750px;
@@ -316,34 +512,14 @@ nav{
 }
 
 
-.sel1 h3{
+label{
     font-family:sans-serif;
     font-size: 25px;
     text-transform: uppercase;
     font-weight: 500;
-    padding: 0px 600px;
-    line-height: 30px;
-    margin-top: 50px;
-}
-
-.sel2 h3{
-    font-family:sans-serif;
-    font-size: 25px;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 0px 600px;
-    line-height: 30px;
-    margin-top: 50px;
-}
-
-.sel3 h3{
-    font-family:sans-serif;
-    font-size: 25px;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 0px 600px;
-    line-height: 30px;
-    margin-top: 50px;
+    padding: 0px 650px;
+    line-height: 60px;
+    
 }
 
 .sel1 select{
@@ -351,7 +527,7 @@ nav{
     height: 55px;
     background: #eeeeee;
     color: #384354;
-    margin: 0px calc(100% - 1426px);
+    margin: 0px calc(100% - 1326px);
     margin-top: 10px;
 }
 
@@ -360,7 +536,7 @@ nav{
     height: 55px;
     background: #eeeeee;
     color: #384354;
-    margin: 0px calc(100% - 1426px);
+    margin: 0px calc(100% - 1326px);
     margin-top: 10px;
 }
 
@@ -369,7 +545,7 @@ nav{
     height: 55px;
     background: #eeeeee;
     color: #384354;
-    margin: 0px calc(100% - 1426px);
+    margin: 0px calc(100% - 1326px);
     margin-top: 10px;
 }
 
@@ -377,7 +553,7 @@ nav{
     width: calc(100% - 1210px);
     height: 5px;
     background: #d1d1d1;
-    margin: 40px calc(100% - 1426px);
+    margin: 40px calc(100% - 1326px);
 }
 
 .cost p{
@@ -391,101 +567,136 @@ nav{
 
 .stats{
     width: 100%;
-    height: 500px;
-    background: url(../img/stats_champ.png) 73% 285px/auto no-repeat, url(../img/stats_check.png) 57% 285px/auto no-repeat, url(../img/stats_slash.png) 42% 285px/auto no-repeat, url(../img/stats_smail.png) 27% 290px/auto no-repeat, url(../img/line.png) 50.5% 155px/100px no-repeat, url(../img/stats_fon.png) 50%/100% no-repeat;
+    height: 460px;
+    background:url(../img/line.png) 50% 155px/100px no-repeat, url(../img/stats_fon.png) 50% 50px/200% no-repeat fixed;
+    display: inline-block;
+    
 }
+    
 
 .stats h2{
-    padding: 90px 800px;
-    margin: 200px 0px 63px 0px;
+    padding-top: 70px;
+    text-align: center;
     font-family:sans-serif;
     font-size: 35px;
     font-weight:  700;
+    -webkit-animation: pulse 3s ease infinite;
+    -o-animation: pulse 3s ease infinite;
+    animation: pulse 3s ease infinite;
 }
 
+.four{
+    padding-top: 150px;
+}
+
+
+.skill2:hover{
+    -webkit-animation: tada 1s ease-in-out forwards;
+    -o-animation: tada 1s ease-in-out forwards;
+    animation: tada 1s ease-in-out forwards;
+}
+ 
 .stat1{
-    width: 250px;
     float: left;
+    margin: 0px 0px 0px 20%;
     text-align: center;
-    margin: 100px 0px 0px 430px; 
-    font-size: 19px;
-}
-
-.stat1 h3{
-    font-family:fantasy;
-    font-weight: 600;
-    font-size: 30px;
-    color: #323e4f;
-    margin: -10px 0px 30px 0px;
-}
-
-.stat1 span{
-    color: #323e4f;
-    font-size: 19px;
-    font-family:sans-serif;
     
 }
 
+.stat1 h3{
+    color: #384354;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin: 20px 0px 20px 0px;
+}
+   
+.stat1 p{
+     color: #384354;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
 .stat2{
-    width: 250px;
     float: left;
+    margin: 0px 0px 0px 5%;
     text-align: center;
-    margin: 100px 0px 0px 50px; 
-    font-size: 19px;
 }
 
 .stat2 h3{
-    font-family:fantasy;
-    font-weight: 600;
-    font-size: 30px;
-    color: #323e4f;
-    margin: -10px 0px 30px 0px;
+     color: #384354;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin: 20px 0px 20px 0px;
+}
+
+.stat2 p{
+     color: #384354;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
 }
 
 .stat3{
-    width: 250px;
     float: left;
+    margin: 0px 0px 0px 5%;
     text-align: center;
-    margin: 100px 0px 0px 45px; 
-    font-size: 19px;
 }
 
 .stat3 h3{
-    font-family:fantasy;
-    font-weight: 600;
-    font-size: 30px;
-    color: #323e4f;
-    margin: -10px 0px 30px 0px;
+    color: #384354;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin: 20px 0px 20px 0px;
+}
+
+.stat3 p{
+     color: #384354;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
 }
 
 .stat4{
-    width: 250px;
     float: left;
+    margin: 0px 0px 0px 5%;
     text-align: center;
-    margin: 100px 0px 0px 65px; 
-    font-size: 19px;
 }
 
 .stat4 h3{
-    font-family:fantasy;
-    font-weight: 600;
-    font-size: 30px;
-    color: #323e4f;
-    margin: -10px 0px 30px 0px;
+    color: #384354;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin: 20px 0px 20px 0px;
+}
+
+.stat4 p{
+     color: #384354;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
 }
 
 .feedback{
+    
     width: 100%;
-    height: 595px;
-    background: url(../img/line.png) 50.5% 135px/100px no-repeat,  url(../img/feed_foto.png) 50.5% 250px/auto no-repeat, #fff;
+    height: 495px;
+    background: url(../img/line.png) 50% 135px/100px no-repeat,  url(../img/feed_foto.png) 50.5% 250px/auto no-repeat, #fff;
 }
 
 .feedback h2{
-    padding: 70px 935px;
-    margin: 70px 0px 70px 0px;
+    padding-top: 85px;
+    text-align: center;
     font-family:sans-serif;
     font-size: 35px;
     font-weight:  700;
+    -webkit-animation: pulse 3s ease infinite;
+    -o-animation: pulse 3s ease infinite;
+    animation: pulse 3s ease infinite;
 }
 
 .feedback p{
@@ -493,21 +704,25 @@ nav{
     font-size: 19px;
     font-family:sans-serif;
     text-align: center;
-    padding-top: 170px;
+    padding-top: 300px;
 }
 
 .contacts{
-    height: 1035px;
-    background: url(../img/phone.png) 60% 350px/auto no-repeat, url(../img/letter.png) 50% 350px/auto no-repeat, url(../img/geo.png) 40% 350px/auto no-repeat, url(../img/line.png) 50.5% 220px/100px no-repeat, url(../img/contacts_fon.png) 50%/100% 80% no-repeat;
+    width: 100%;
+    height: 1100px;
+    background:url(../img/line.png) 50.5% 240px/100px no-repeat, url(../img/contacts_fon.png) 50%/100% 80% no-repeat;
 }
 
 .contacts h2{
-     padding: 150px 0px 0px 890px;
-    margin: 70px 0px 70px 0px;
+     text-align: center;
+    padding-top: 180px;
     font-family:sans-serif;
     font-size: 35px;
     font-weight:  700;
     color: #fff;
+    -webkit-animation: pulse 3s ease infinite;
+    -o-animation: pulse 3s ease infinite;
+    animation: pulse 3s ease infinite;
 }
 
 .contacts p{
@@ -515,62 +730,107 @@ nav{
     color: #fff;
     font-family: sans-serif;
     font-size: 20px;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .link1{
-   
-    padding: 100px 0px 0px 750px;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 50px 36%;
     text-align: center;
     float: left;
 }
 .link1 a{
-     width: 200px;
-    height: 100px;
+     width: 30px;
+    height: 10px;
     color: #fff;
     font-family: sans-serif;
+    text-align: center;
 }
 
 .link2{
-    padding: 100px 60px 0px 50px;
+    padding: 10px 30px 50px 50px;
     text-align: center;
     float: left
 }
 
 .link2 a{
-     width: 200px;
-    height: 100px;
+     width: 30px;
+    height: 10px;
     color: #fff;
     font-family: sans-serif;
 }
 
 .link3{
-    
-    padding: 100px 0px 0px 10px;
-    text-align: start;
+    padding: 10px 0px 50px 0px;
+    text-align: left;
 }
 
 .link3 a{
-     width: 100px;
-    height: 100px;
+     width: 5px;
+    height: 10px;
     color: #fff;
     font-family: sans-serif;
 }
 
+
+
+.icon3{
+    animation: shakeY 20s infinite alternate both;    
+}
+
+.icon4{
+    animation: shakeY 20s infinite alternate both;    
+}
+
+.icon5{
+    animation: shakeY 20s infinite alternate both; 
+}
+
 .contacts h3{
-     padding: 60px 0px 0px 850px;
-    margin: 0px 0px 70px 0px;
+     text-align: center;
+    padding-top: 25px;
+    padding-bottom: 20px;
     font-family:sans-serif;
     font-size: 25px;
     font-weight:  700;
     color: #fff;
 }
 
+.icon3{
+    width: 18px;
+    height: 26px;
+    padding: 80px 0px 50px 55px; 
+    margin: 0px 0px 0px 0px;
+    display: block;
+}
+
+.icon4{
+    width: 29px;
+    height: 24px;
+    padding: 80px 0px 50px 55px; 
+    margin: 0px 0px 0px 0px;
+    display: block;
+}
+
+.icon5{
+    width: 24px;
+    height: 24px;
+    padding: 80px 0px 50px 50px; 
+    margin: 0px 0px 0px 0px;
+    display: block;
+}
+
+.form{
+    width: 100%;
+    height: 300px;
+    padding: 30px 0px 0px 0px;
+}
+
 .name{
     width: 355px;
     height: 35px;
     background: #d2d6dc;
-    margin: 0px 0px 0px 640px;
+    margin: 0px 0px 0px 620px;
     text-align: start;
     padding-left: 10px;
 }
@@ -588,9 +848,10 @@ nav{
     width: 745px;
     height: 95px;
     background: #d2d6dc;
-    margin: 15px 0px 0px 640px;
+    margin: 15px 0px 0px 620px;
     text-align: left;
     padding: 5px 10px;
+    display: block;
 }
 
 .res{
@@ -603,12 +864,27 @@ nav{
     color: #fff;
     font-size: 15px;
     padding: 0px 16px;
-    margin: 30px 14px 0px 950px;
+    margin: 30px 14px 0px 930px;
 }
+
+.res{
+    transition: all 0.2s;
+    transform: scale(1);
+}
+
+.res:hover{
+    background: #d17700;
+    color: white;
+}
+
+.res:active{
+    transform: scale(1.1);
+}
+
 
 .end{
     color: #fff;
     font-family: cursive;
     font-size: 15px;
-    margin: 100px 0px 0px 850px;
+    margin: 145px 0px 0px 850px;
 }
